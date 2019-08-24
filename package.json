@@ -3,6 +3,7 @@
   "scripts": {
     "build": "rimraf ./dist && tsc && yarn build-output",
     "build-output": "tsn ./src/buildOutput.ts",
+    "preview": "yarn build-output && tsn ./src/kirillgroshkov.ts",
     "kirillgroshkov": "tsn ./src/kirillgroshkov.ts"
   },
   "dependencies": {},
@@ -32,7 +33,7 @@
   "engines": {
     "node": ">=8"
   },
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "npx kirillgroshkov",
   "author": "Kirill Groshkov",
   "license": "MIT"
