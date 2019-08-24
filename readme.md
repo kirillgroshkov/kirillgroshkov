@@ -6,7 +6,6 @@
 
     npx kirillgroshkov
 
-
 # Preview
 
-![npx kirillgroshkov](./media/npx_kirillgroshkov_1.png)
+![npx kirillgroshkov](./media/npx2.png)

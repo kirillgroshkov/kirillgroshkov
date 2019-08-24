@@ -36,13 +36,13 @@ const lines = _flatten(
 const text = [c.white('Kirill Groshkov'.padStart(29)), '', ...lines.slice(0, -1)].join('\n')
 
 const output = boxen(text, {
-  margin: 4,
+  margin: 1,
   padding: 1,
   borderStyle: 'double' as any,
   // borderStyle: 'double' as any,
   borderColor: 'cyan',
   dimBorder: true,
-  float: 'center',
+  float: 'left',
   // backgroundColor: 'green',
   align: 'left',
 })
