@@ -1,0 +1,39 @@
+{
+  "name": "kirillgroshkov",
+  "scripts": {
+    "build": "rimraf ./dist && tsc && yarn build-output",
+    "build-output": "tsn ./src/buildOutput.ts",
+    "kirillgroshkov": "tsn ./src/kirillgroshkov.ts"
+  },
+  "dependencies": {},
+  "devDependencies": {
+    "@naturalcycles/dev-lib": "^7.17.0",
+    "@types/node": "^12.7.2",
+    "boxen": "^4.1.0",
+    "chalk": "^2.4.2",
+    "fs-extra": "^8.1.0",
+    "rimraf": "^3.0.0"
+  },
+  "files": [
+    "dist/output.txt",
+    "dist/kirillgroshkov.js",
+    "dist/paths.cnst.js"
+  ],
+  "bin": {
+    "kirillgroshkov": "dist/kirillgroshkov.js"
+  },
+  "publishConfig": {
+    "access": "public"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/kirillgroshkov/kirillgroshkov"
+  },
+  "engines": {
+    "node": ">=8"
+  },
+  "version": "1.0.0",
+  "description": "npx kirillgroshkov",
+  "author": "Kirill Groshkov",
+  "license": "MIT"
+}
