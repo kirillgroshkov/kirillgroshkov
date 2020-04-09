@@ -2,18 +2,19 @@
   "name": "kirillgroshkov",
   "scripts": {
     "build": "rimraf ./dist && tsc && yarn build-output",
-    "build-output": "tsn ./src/buildOutput.ts",
-    "preview": "yarn build-output && tsn ./src/kirillgroshkov.ts",
-    "kirillgroshkov": "tsn ./src/kirillgroshkov.ts"
+    "build-output": "tsn buildOutput",
+    "preview": "yarn build-output && tsn kirillgroshkov",
+    "kirillgroshkov": "tsn kirillgroshkov",
+    "test": "yarn build && node ./dist/kirillgroshkov.js"
   },
   "dependencies": {},
   "devDependencies": {
-    "@naturalcycles/dev-lib": "^7.17.0",
-    "@types/node": "^12.7.2",
-    "boxen": "^4.1.0",
-    "chalk": "^2.4.2",
-    "fs-extra": "^8.1.0",
-    "rimraf": "^3.0.0"
+    "@naturalcycles/dev-lib": "^10.14.4",
+    "@types/node": "^13.11.1",
+    "boxen": "^4.2.0",
+    "chalk": "^4.0.0",
+    "fs-extra": "^9.0.0",
+    "rimraf": "^3.0.2"
   },
   "files": [
     "dist/output.txt",

@@ -1,7 +1,13 @@
+/*
+
+yarn tsn buildOutput
+
+ */
+
 import * as boxen from 'boxen'
-import c from 'chalk'
+import * as c from 'chalk'
 import * as fs from 'fs-extra'
-import { outputTxtPath } from './paths.cnst'
+import { outputTxtPath } from '../src/paths.cnst'
 
 const blocks: Record<string, string>[] = [
   {
@@ -51,7 +57,7 @@ fs.ensureFileSync(outputTxtPath)
 fs.writeFileSync(outputTxtPath, output, 'utf8')
 console.log(`created ${outputTxtPath}`)
 
-function _flatten<T> (arrays: T[][]): T[] {
+function _flatten<T>(arrays: T[][]): T[] {
   // to flat single level array
   return ([] as T[]).concat(...arrays)
 }
