@@ -4,14 +4,14 @@
     "build": "rimraf ./dist && tsc && yarn build-output",
     "build-output": "tsn buildOutput",
     "preview": "yarn build-output && tsn kirillgroshkov",
-    "kirillgroshkov": "tsn kirillgroshkov",
+    "kirillgroshkov": "tsn src/kirillgroshkov",
     "test": "yarn build && node ./dist/kirillgroshkov.js"
   },
   "dependencies": {},
   "devDependencies": {
     "@naturalcycles/dev-lib": "^10.14.4",
-    "@types/node": "^13.11.1",
-    "boxen": "^4.2.0",
+    "@types/node": "^14.14.37",
+    "boxen": "^5.0.0",
     "chalk": "^4.0.0",
     "fs-extra": "^9.0.0",
     "rimraf": "^3.0.2"

@@ -9,7 +9,7 @@ import * as c from 'chalk'
 import * as fs from 'fs-extra'
 import { outputTxtPath } from '../src/paths.cnst'
 
-const blocks: Record<string, string>[] = [
+const blocks: Record<string, any>[] = [
   {
     Work: 'https://naturalcycles.com',
     'Open Source': 'https://github.com/NaturalCycles',
