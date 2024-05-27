@@ -1,8 +1,10 @@
 {
   "extends": "@naturalcycles/dev-lib/cfg/tsconfig.json",
   "compilerOptions": {
-    "outDir": "dist"
+    "importHelpers": false,
+    "esModuleInterop": false,
+    "outDir": "dist",
   },
   "include": ["src"],
-  "exclude": ["**/__exclude"]
+  "exclude": ["**/__exclude"],
 }

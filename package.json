@@ -1,20 +1,19 @@
 {
   "name": "kirillgroshkov",
   "scripts": {
-    "build": "rimraf ./dist && tsc && yarn build-output",
+    "prepare": "husky",
+    "build": "rm -rf ./dist && tsc && yarn build-output",
     "build-output": "tsn buildOutput",
-    "preview": "yarn build-output && tsn kirillgroshkov",
+    "preview": "yarn build-output && tsn src/kirillgroshkov",
     "kirillgroshkov": "tsn src/kirillgroshkov",
     "test": "yarn build && node ./dist/kirillgroshkov.js"
   },
   "dependencies": {},
   "devDependencies": {
-    "@naturalcycles/dev-lib": "^10.14.4",
-    "@types/node": "^14.14.37",
-    "boxen": "^5.0.0",
-    "chalk": "^4.0.0",
-    "fs-extra": "^9.0.0",
-    "rimraf": "^3.0.2"
+    "@naturalcycles/dev-lib": "^13.53.0",
+    "@naturalcycles/nodejs-lib": "^13.25.0",
+    "@types/node": "^20.12.12",
+    "boxen": "^5.0.0"
   },
   "files": [
     "dist/output.txt",
@@ -32,7 +31,7 @@
     "url": "https://github.com/kirillgroshkov/kirillgroshkov"
   },
   "engines": {
-    "node": ">=8"
+    "node": ">=18"
   },
   "version": "1.0.2",
   "description": "npx kirillgroshkov",

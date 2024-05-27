@@ -4,9 +4,9 @@ yarn tsn buildOutput
 
  */
 
-import * as boxen from 'boxen'
-import * as c from 'chalk'
-import * as fs from 'fs-extra'
+// todo: try to update boxen and make this esm-only package 🙈
+import { chalk as c, fs2 } from '@naturalcycles/nodejs-lib'
+import boxen from 'boxen'
 import { outputTxtPath } from '../src/paths.cnst'
 
 const blocks: Record<string, any>[] = [
@@ -25,19 +25,17 @@ const blocks: Record<string, any>[] = [
   },
 ]
 
-const lines = _flatten(
-  blocks.map(block => {
-    return Object.entries(block)
-      .map(([k, v]) => {
-        const left = c.bold.whiteBright(k.padStart(11))
+const lines = blocks.flatMap(block => {
+  return Object.entries(block)
+    .map(([k, v]) => {
+      const left = c.bold.whiteBright(k.padStart(11))
 
-        const right = v.includes('http') ? c.cyan(v) : c.white(v)
+      const right = v.includes('http') ? c.cyan(v) : c.white(v)
 
-        return [left, right].join(':  ')
-      })
-      .concat('')
-  }),
-)
+      return [left, right].join(':  ')
+    })
+    .concat('')
+})
 
 const text = [c.white('Kirill Groshkov'.padStart(29)), '', ...lines.slice(0, -1)].join('\n')
 
@@ -53,11 +51,5 @@ const output = boxen(text, {
   align: 'left',
 })
 
-fs.ensureFileSync(outputTxtPath)
-fs.writeFileSync(outputTxtPath, output, 'utf8')
+fs2.outputFile(outputTxtPath, output)
 console.log(`created ${outputTxtPath}`)
-
-function _flatten<T>(arrays: T[][]): T[] {
-  // to flat single level array
-  return ([] as T[]).concat(...arrays)
-}
